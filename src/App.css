@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+  border: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+main {
+  padding: 4rem 1.5rem;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 1000px) {
+  main {
+    max-width: 89%;
+    padding: 10.5rem 0;
+  }
+  .testimonials {
+    width: 93%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    grid-template-areas:
+      "a a b c"
+      "d e e c";
+  }
+  /* .testimony_card {
+    width: 90%;
+  } */
+
+  #user1 {
+    grid-area: a;
+  }
+  #user4 {
+    grid-area: e;
+  }
+  #user5 {
+    grid-area: c;
+  }
+
+  .card_info h1 {
+    margin-bottom: 1rem;
+  }
+  .card_info p {
+    font-size: 0.78rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 850px) and (min-width: 750px) {
+  .testimonials {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  #user1 {
+    grid-area: 1/1/2/3;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 851px) {
+  .testimonials {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 }
